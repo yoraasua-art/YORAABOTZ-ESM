@@ -12,7 +12,7 @@ module.exports = {
     const adminNote = !isSenderOwner() ? '\n> Hanya admin grup yang bisa menjalankan fitur moderasi.' : '';
 
     const text = `╔══════════════════════════════════════╗
-║      🛡️  *GROUP HELP MENU*  🛡️
+║       🛡️  *PANDUAN GRUP*  🛡️
 ╚══════════════════════════════════════╝
 
 ╭─────────────────────────────────────╮
@@ -47,10 +47,10 @@ module.exports = {
      → Aktifkan atau nonaktifkan sambutan
 
   ◈  ${config.prefix}setwelcome <teks>
-     → Atur pesan welcome custom
+     → Atur pesan sambutan
 
   ◈  ${config.prefix}setgoodbye <teks>
-     → Atur pesan goodbye custom
+     → Atur pesan pamit
 
 ╭─────────────────────────────────────╮
 │  👥  *MODERASI MEMBER*               │
@@ -113,7 +113,7 @@ module.exports = {
 
 ${adminNote}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⚡  _Panduan admin grup untuk bot profesional_
+  ⚡  _Gunakan fitur moderasi sesuai kebutuhan._
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
     await sock.sendMessage(from, { text }, { quoted: msg });

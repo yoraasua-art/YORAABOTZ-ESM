@@ -42,6 +42,6 @@ module.exports = {
   aliases: ['fakta', 'funfact', 'fact'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `🧪 *FAKTA UNIK* (${FAKTA.length})\n\n${random(FAKTA)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🧪 *FAKTA UNIK*\n\n${random(FAKTA)}` }, { quoted: msg });
   },
 };

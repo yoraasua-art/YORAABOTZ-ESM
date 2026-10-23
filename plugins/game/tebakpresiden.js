@@ -38,7 +38,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${d.presiden}*` });
     });
     await sock.sendMessage(from, {
-      text: `🎩 *TEBAK PRESIDEN*\n\n${d.clue}\n\nSiapa dia?\n\n💬 *Ketik jawabanmu langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 Point, +Rp 900`,
+      text: `🎩 *TEBAK PRESIDEN*\n\n${d.clue}\n\nSiapa dia?\n\n💬 *Ketik jawabanmu di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 poin, +Rp 900`,
     });
   },
 };

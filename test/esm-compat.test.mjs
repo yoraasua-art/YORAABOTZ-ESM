@@ -26,5 +26,6 @@ test('ESM runtimeinfo command responds without external API', async () => {
   assert.equal(captured[0], 'chat@s.whatsapp.net');
   assert.match(captured[1].text, /Node\.js:/);
   assert.match(captured[1].text, /RAM sistem:/);
+  assert.doesNotMatch(captured[1].text, /Bot:\s*v|8\.0\.2/);
   assert.equal(captured[2].quoted, msg);
 });

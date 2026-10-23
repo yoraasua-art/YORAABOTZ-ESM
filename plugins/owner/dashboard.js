@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const pkg = require('../../package.json');
 
 function countPlugins() {
   try {
@@ -61,7 +60,6 @@ module.exports = {
 ║      👑 *BOT DASHBOARD*  👑
 ╚══════════════════════════════════════╝
 
-📦 Version         : *${pkg.version}*
 🤖 Bot Name        : *${config.botName}*
 🔐 Prefix          : *${config.prefix}*
 📡 Mode            : *${(config.botMode || 'public').toUpperCase()}*

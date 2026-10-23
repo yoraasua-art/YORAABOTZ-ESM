@@ -8,14 +8,13 @@ export default {
   version: '8.0.2',
   description: 'Menampilkan versi runtime dan ringkasan server.',
   async execute(sock, msg, args, ctx) {
-    const { from, config } = ctx;
+    const { from } = ctx;
     const memoryTotal = os.totalmem();
     const memoryFree = os.freemem();
     const toMiB = (value) => Math.round(value / 1024 / 1024).toLocaleString('id-ID');
     const text = [
       '🧩 *YORA BOTZ · RUNTIME INFO*',
       '',
-      `• Bot: v${config.version || '8.0.2'}`,
       `• Node.js: ${process.version}`,
       `• Platform: ${process.platform} (${process.arch})`,
       `• Uptime proses: ${Math.floor(process.uptime() / 60)} menit`,

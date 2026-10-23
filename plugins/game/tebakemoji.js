@@ -40,7 +40,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${soal.jawab[0]}*` });
     });
     await sock.sendMessage(from, {
-      text: `🎨 *TEBAK EMOJI*\n\n${soal.emoji}\n\n💬 *Ketik kategorinya langsung!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 800, +3 Point`
+      text: `🎨 *TEBAK EMOJI*\n\n${soal.emoji}\n\n💬 *Ketik kategorinya di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 800, +3 poin`
     });
   }
 };

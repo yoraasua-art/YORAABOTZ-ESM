@@ -175,6 +175,7 @@ test('all menu pages render cleanly and list only registered commands', async ()
 
     assert.equal(typeof response, 'string', `${plugin.name} should send text`);
     assert.ok(!response.includes('\uFFFD'), `${plugin.name} contains a broken replacement character`);
+    assert.ok(!response.includes(`v${config.version}`), `${plugin.name} should omit the bot version`);
     assert.ok(!response.includes('COMMAND LAINNYA'), `${plugin.name} should not append unlisted commands`);
     if (plugin.name === 'menu') assert.ok(response.includes(`${config.prefix}sc`), 'main menu should list .sc');
     if (plugin.name === 'menu') {
@@ -304,8 +305,8 @@ test('shared menu layout separates the title, sections, and footer consistently'
   const lines = rendered.split('\n');
 
   assert.equal(lines[0], '╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮');
-  assert.equal(lines[1], '│  ✦ *YORA BOTZ* · *v8.0.2*');
-  assert.equal(lines[2], '│  _MENU UJI_ · v8.0.2');
+  assert.equal(lines[1], '│  ✦ *YORA BOTZ*');
+  assert.equal(lines[2], '│  _MENU UJI_');
   assert.ok(!rendered.includes('OBSIDIAN LUXE'));
   assert.equal(lines[3], '╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯');
   assert.ok(lines.indexOf('╭─ 📚 *KATEGORI PERTAMA*') < lines.indexOf('╭─ ⚙️ *KATEGORI KEDUA*'));
@@ -313,6 +314,19 @@ test('shared menu layout separates the title, sections, and footer consistently'
   assert.ok(lines.some(line => line.includes('├ `!ping`')));
   assert.ok(lines.includes('╭─ ✨ *KETERANGAN*'));
   assert.ok(lines.some(line => line.includes('🅟 = Premium')));
+  assert.doesNotMatch(rendered, /\bv\d+\.\d+\.\d+\b/);
+});
+
+test('version command keeps runtime details without exposing the bot version', async () => {
+  const versionPlugin = require('../plugins/info/version');
+  let response;
+  await versionPlugin.execute({
+    sendMessage: async (_jid, message) => { response = message.text; },
+  }, {}, [], { from: 'test@g.us' });
+
+  assert.match(response, /INFO RUNTIME/);
+  assert.match(response, new RegExp(process.version.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.ok(!response.includes(config.version));
 });
 
 test('menu command styling does not alter website or WhatsApp URLs', () => {

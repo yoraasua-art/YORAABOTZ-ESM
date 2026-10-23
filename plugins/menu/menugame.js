@@ -84,9 +84,8 @@ module.exports = {
           icon: '💡',
           title: 'CARA BERMAIN',
           items: [
-            '*Rebutan!* Siapa pun di chat boleh menjawab — yang benar paling cepat menang.',
-            'Kirim jawaban langsung di chat.',
-            'Jawaban salah dibalas bot, dan petunjuk muncul setelah beberapa kali salah.',
+            'Jawab langsung di chat grup; jawaban benar tercepat menang.',
+            'Bot membalas jawaban salah dan memberi petunjuk setelah beberapa kali salah.',
             'Ketik *nyerah* untuk melewati soal (hanya yang memulai soal).',
             `Waktu menjawab setiap permainan: *${ctx.gameDurationText || '2 menit'}*.`,
             'Semua permainan gratis dan tidak memakai limit.',

@@ -11,12 +11,12 @@ module.exports = {
   async execute(ctx) {
     const url = (ctx.args && ctx.args[0]) || '';
     if (!url || !/^https?:\/\//i.test(url)) {
-      return ctx.reply('🎬 *CAPCUT NO WATERMARK (NO API KEY)*\n\nCara pakai: *.capcut <link_capcut>*');
+      return ctx.reply('🎬 *UNDUH VIDEO CAPCUT TANPA WATERMARK*\n\nGunakan: *.capcut <tautan>*');
     }
     await ctx.reply('⏳ _Mengunduh video CapCut..._');
     const res = await downloadMultiPlatformNoKey('capcut', url);
     if (!res.ok) return ctx.reply('❌ ' + res.error);
-    return ctx.reply(`✅ *CAPCUT DOWNLOADER*\n\n🎬 Judul: *${res.title}*\n🔗 Video URL: ${res.url}`);
+    return ctx.reply(`✅ *VIDEO CAPCUT*\n\n🎬 Judul: *${res.title}*\n🔗 Tautan video: ${res.url}`);
   }
 };
 module.exports.handler = module.exports.execute;

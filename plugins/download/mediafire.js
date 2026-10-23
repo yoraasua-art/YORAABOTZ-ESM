@@ -11,16 +11,16 @@ module.exports = {
   async execute(ctx) {
     const url = (ctx.args && ctx.args[0]) || '';
     if (!url || !url.includes('mediafire.com')) {
-      return ctx.reply('📥 *MEDIAFIRE DOWNLOADER (NO API KEY)*\n\nCara pakai: *.mediafire <link_mediafire>*');
+      return ctx.reply('📥 *UNDUH FILE MEDIAFIRE*\n\nGunakan: *.mediafire <tautan>*');
     }
-    await ctx.reply('⏳ _Sedang mengambil file dari MediaFire tanpa API Key..._');
+    await ctx.reply('⏳ Mengambil file dari MediaFire...');
     const res = await downloadMultiPlatformNoKey('mediafire', url);
     if (!res.ok) return ctx.reply('❌ ' + res.error);
     return ctx.reply(
-      `✅ *MEDIAFIRE DOWNLOADER*\n\n` +
-      `📄 Nama File: *${res.title}*\n` +
+      `✅ *FILE MEDIAFIRE*\n\n` +
+      `📄 Nama file: *${res.title}*\n` +
       `📦 Ukuran: *${res.size || '-'}*\n` +
-      `🔗 Link Direct: ${res.url}`
+      `🔗 Tautan: ${res.url}`
     );
   }
 };

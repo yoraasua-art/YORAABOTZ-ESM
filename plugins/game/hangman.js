@@ -21,7 +21,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${kata}*` });
     });
     await sock.sendMessage(from, {
-      text: `🎯 *HANGMAN*\n\nKata: ${tampil}\nNyawa: ❤️❤️❤️❤️❤️❤️\n\n💬 *Ketik 1 huruf langsung!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 1000, +5 Point`
+      text: `🎯 *HANGMAN*\n\nKata: ${tampil}\nNyawa: ❤️❤️❤️❤️❤️❤️\n\n💬 *Ketik 1 huruf di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 1000, +5 poin`
     });
   }
 };

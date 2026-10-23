@@ -19,6 +19,6 @@ module.exports = {
   aliases: ['horor', 'ceritahantu', 'horror'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `${random(CERITA)}\n\n_— Cerita Horor ${CERITA.length}_` }, { quoted: msg });
+    await sock.sendMessage(from, { text: random(CERITA) }, { quoted: msg });
   },
 };

@@ -16,7 +16,7 @@ module.exports = {
       }, { quoted: msg });
     }
 
-    await sock.sendMessage(from, { text: '⏳ Downloading...' }, { quoted: msg });
+    await sock.sendMessage(from, { text: '⏳ Mengunduh video TikTok...' }, { quoted: msg });
 
     try {
       const data = await downloadTT(url, { ...parsed.opts, maxBytes: parsed.maxBytes });
@@ -42,7 +42,7 @@ module.exports = {
     } catch (e) {
       console.error('❌ TikTok error:', e.message);
       await sock.sendMessage(from, {
-        text: `❌ *Gagal download*\n\n${e.message}`,
+        text: `❌ *Gagal mengunduh*\n\n${e.message}`,
       }, { quoted: msg });
     }
   },

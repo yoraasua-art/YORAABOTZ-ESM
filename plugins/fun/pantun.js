@@ -34,6 +34,6 @@ module.exports = {
   name: 'pantun', category: 'fun',
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `🎭 *PANTUN* (${PANTUN.length})\n\n${random(PANTUN)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🎭 *PANTUN*\n\n${random(PANTUN)}` }, { quoted: msg });
   }
 };

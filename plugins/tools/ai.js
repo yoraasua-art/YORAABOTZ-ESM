@@ -1,5 +1,3 @@
-const pkg = require('../../package.json');
-
 function normalize(text) {
   return String(text || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
@@ -18,7 +16,7 @@ function buildReply(input) {
     },
     {
       match: /(premium|apa benefit premium|keuntungan premium)/i,
-      response: '💎 Premium memberi akses fitur eksklusif seperti downloader premium, limit harian lebih banyak, multiplier hadiah, diskon shop, dan fitur eksklusif premium. Ketik *.premium* untuk info lengkap.',
+      response: '💎 Premium memberi akses downloader premium, limit harian lebih banyak, multiplier hadiah, dan diskon shop. Ketik *.premium* untuk info lengkap.',
     },
     {
       match: /(daftar|register|cara daftar|bergabung)/i,
@@ -46,7 +44,7 @@ function buildReply(input) {
     },
     {
       match: /(versi|version|v7|v7 2)/i,
-      response: '📦 Saya sedang berjalan di *versi ' + pkg.version + '* dengan banyak fitur real dan panel operasional yang makin lengkap.',
+      response: '📦 Informasi versi bot tidak ditampilkan. Ketik *.commands* untuk melihat fitur yang tersedia.',
     },
   ];
 

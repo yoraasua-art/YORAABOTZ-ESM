@@ -131,7 +131,6 @@ module.exports = {
           `Tanggal: ${formatTanggal(timeZone)}`,
           `Total akun: *${totalUsers}*`,
           `Waktu aktif: *${uptimeText}*`,
-          `Versi: *v${config.version || '8.0.2'}*`,
           `Owner: ${config.ownerName}`,
           `Situs: ${config.website}`,
           `Grup resmi: ${config.officialGroup?.link || 'Belum tersedia'}`,

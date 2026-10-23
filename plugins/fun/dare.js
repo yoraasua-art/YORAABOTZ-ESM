@@ -37,6 +37,6 @@ module.exports = {
   aliases: ['tantangan'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `🔥 *DARE* (${DARES.length})\n\n${random(DARES)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🔥 *DARE*\n\n${random(DARES)}` }, { quoted: msg });
   },
 };

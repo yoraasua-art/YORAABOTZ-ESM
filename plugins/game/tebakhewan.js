@@ -61,7 +61,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${soal.jawab}*` });
     });
     await sock.sendMessage(from, {
-      text: `🐾 *TEBAK HEWAN*\n\n${soal.clue}\n\n💬 *Ketik nama hewannya langsung!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 600, +2 Point`
+      text: `🐾 *TEBAK HEWAN*\n\n${soal.clue}\n\n💬 *Ketik nama hewannya di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +Rp 600, +2 poin`
     });
   }
 };

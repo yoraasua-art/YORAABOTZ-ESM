@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { VERSION } = require('../../lib/version');
 const { countCommands } = require('../../lib/command-registry');
 
 function countUsers() {
@@ -33,7 +32,6 @@ module.exports = {
 
     const text = [
       `╭━━━〔 ✦ *${config.botName || 'Yora Botz'}* 〕━━━╮`,
-      `│ 🚀 Core     : *v${VERSION}*`,
       `│ 📡 Koneksi  : *${connectionState}*`,
       `│ ⏱️ Uptime   : *${jam}j ${menit}m ${detik}d*`,
       `│ 🧩 Plugin   : *${loaded} aktif*${failed ? ` · ⚠️ ${failed} gagal` : ' · ✅ sehat'}`,

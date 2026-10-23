@@ -37,7 +37,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${jawab}*` });
     });
     await sock.sendMessage(from, {
-      text: `${judul}\n\n${soal.q}\n\n💬 *Ketik jawaban (angka saja) langsung di chat — rebutan!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +${reward[0]} Point, +Rp ${reward[1].toLocaleString('id-ID')}\n_Mode lain: ${config.prefix}math mudah/sedang/sulit/biasa_`,
+      text: `${judul}\n\n${soal.q}\n\n💬 *Ketik jawaban (angka saja) di chat — rebutan!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +${reward[0]} poin, +Rp ${reward[1].toLocaleString('id-ID')}\n_Mode lain: ${config.prefix}math mudah/sedang/sulit/biasa_`,
     });
   },
 };

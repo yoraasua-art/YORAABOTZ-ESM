@@ -11,7 +11,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${angka}*` });
     });
     await sock.sendMessage(from, {
-      text: `🔢 *TEBAK ANGKA${hard ? ' (SULIT)' : ''}*\n\nBot pilih 1-${max}.${hard ? '\nBot akan memberi petunjuk *lebih besar/lebih kecil*.' : `\nMau lebih menantang? *${config.prefix}tebakangka sulit* (1-100)`}\n\n💬 *Ketik angkamu langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +${reward[0]} Point, +Rp ${reward[1].toLocaleString('id-ID')}`
+      text: `🔢 *TEBAK ANGKA${hard ? ' (SULIT)' : ''}*\n\nBot memilih angka 1–${max}.${hard ? '\nBot akan memberi petunjuk *lebih besar/lebih kecil*.' : `\nMau lebih menantang? *${config.prefix}tebakangka sulit* (1–100)`}\n\n💬 *Ketik angkamu di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +${reward[0]} poin, +Rp ${reward[1].toLocaleString('id-ID')}`
     });
   }
 };

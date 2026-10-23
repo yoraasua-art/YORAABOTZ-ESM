@@ -34,6 +34,6 @@ module.exports = {
       'Ada kesempatan emas yang harus kamu raih sekarang.',
       'Hari ini cocok untuk memulai hal yang selama ini kamu tunda.',
     ];
-    await sock.sendMessage(from, { text: `🔮 *RAMALAN* (${list.length})\n\n${random(list)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🔮 *RAMALAN*\n\n${random(list)}` }, { quoted: msg });
   }
 };

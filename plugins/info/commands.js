@@ -1,4 +1,3 @@
-const { VERSION } = require('../../lib/version');
 const { groupByCategory, countCommands } = require('../../lib/command-registry');
 
 const categories = {
@@ -30,7 +29,7 @@ module.exports = {
       });
 
     const text = [
-      `╭━━━〔 ✦ *YORA BOTZ v${VERSION}* 〕━━━╮`,
+      '╭━━━〔 ✦ *YORA BOTZ* 〕━━━╮',
       `│ 📚 *COMMAND CENTER*`,
       `│ 🧩 Plugin : *${pluginList.length}*`,
       `│ 🔑 Command: *${total}*`,

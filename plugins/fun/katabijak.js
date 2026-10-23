@@ -34,6 +34,6 @@ module.exports = {
   name: 'katabijak', category: 'fun', aliases: ['kata','bijak'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `🌟 *KATA BIJAK* (${KATA.length})\n\n_"${random(KATA)}"_` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🌟 *KATA BIJAK*\n\n_"${random(KATA)}"_` }, { quoted: msg });
   }
 };

@@ -37,7 +37,7 @@ module.exports = {
         rewardExp: 120
       });
     }
-    return ctx.reply(`🌍 *TEBAK NEGARA*\n\nSoal: ${pick.soal}\n💡 Petunjuk: ` + '`' + `${pick.jawaban[0]} ${Array(pick.jawaban.length - 1).fill('_').join(' ')}` + '`' + ` (${pick.jawaban.length} huruf)\n\n_Ketik *hint* untuk bantuan atau *nyerah* untuk skip._`);
+    return ctx.reply(`🌍 *TEBAK NEGARA*\n\nSoal: ${pick.soal}\n💡 Petunjuk: ` + '`' + `${pick.jawaban[0]} ${Array(pick.jawaban.length - 1).fill('_').join(' ')}` + '`' + ` (${pick.jawaban.length} huruf)\n\n_Ketik *hint* untuk petunjuk atau *nyerah* untuk menyerah._`);
   }
 };
 module.exports.handler = module.exports.execute;

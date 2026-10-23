@@ -244,7 +244,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${q.a}*` });
     });
     await sock.sendMessage(from, {
-      text: `❓ *QUIZ* (${QUESTIONS.length} soal)\n\n${q.q}\n\n💬 *Ketik jawabanmu langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +10 Point, +Rp 1000`,
+      text: `❓ *QUIZ* (${QUESTIONS.length} soal)\n\n${q.q}\n\n💬 *Ketik jawabanmu di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +10 poin, +Rp 1000`,
     });
   },
 };

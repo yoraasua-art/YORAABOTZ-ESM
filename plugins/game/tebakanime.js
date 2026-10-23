@@ -43,7 +43,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${d.anime}*` });
     });
     await sock.sendMessage(from, {
-      text: `🎌 *TEBAK ANIME*\n\n${d.clue}\n\nAnime apakah ini?\n\n💬 *Ketik jawabanmu langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 Point, +Rp 900`,
+      text: `🎌 *TEBAK ANIME*\n\n${d.clue}\n\nAnime apakah ini?\n\n💬 *Ketik jawabanmu di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 poin, +Rp 900`,
     });
   },
 };

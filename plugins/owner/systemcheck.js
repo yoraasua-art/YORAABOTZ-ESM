@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('node:child_process');
-const { VERSION } = require('../../lib/version');
 
 function dependencyStatus(name) {
   try {
@@ -32,7 +31,7 @@ module.exports = {
     const ok = checks.every(line => line.startsWith('✅')) && ffmpeg && failed === 0 && config?.prefix;
 
     const text = [
-      `╭━━━〔 🩺 *SYSTEM CHECK v${VERSION}* 〕━━━╮`,
+      '╭━━━〔 🩺 *SYSTEM CHECK* 〕━━━╮',
       `│ Overall: *${ok ? 'READY ✅' : 'NEEDS ATTENTION ⚠️'}*`,
       `│ Prefix : *${config.prefix || 'tidak ada'}*`,
       `│ Plugins: *${pluginList.length} loaded*${failed ? ` · ${failed} failed` : ''}`,

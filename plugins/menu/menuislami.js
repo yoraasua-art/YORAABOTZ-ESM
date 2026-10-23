@@ -13,7 +13,7 @@ module.exports = {
       sections: [
         { icon: '🕌', title: 'SHOLAT', items: [
           `${config.prefix}jadwalsholat <kota> — jadwal sholat hari ini`,
-          `${config.prefix}pengingatsholat <kota>/off — pengingat otomatis di grup (admin)`,
+          `${config.prefix}pengingatsholat <kota> [off] — pengingat otomatis di grup (admin)`,
         ] },
         { icon: '📖', title: "AL-QUR'AN", items: [
           `${config.prefix}surah <nama/nomor> [halaman] — baca surah + terjemahan`,

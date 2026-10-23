@@ -1,5 +1,3 @@
-const pkg = require('../../package.json');
-
 module.exports = {
   name: 'about',
   category: 'info',
@@ -15,18 +13,15 @@ module.exports = {
 ║      🤖  *ABOUT ${config.botName.toUpperCase()}*  🤖
 ╚══════════════════════════════════════╝
 
-  ◆  🧩  Versi      : *${pkg.version}*
   ◆  👤  Owner      : *${config.ownerName}*
   ◆  📞  Nomor      : *${config.ownerNumber}*
   ◆  🌐  Website    : ${config.website}
   ◆  ⏱️  Uptime     : *${jam}h ${menit}m ${detik}s*
-  ◆  🧠  Plugin     : *${(pluginList || []).length} command*
-  ◆  🛡️  Status     : *Online & stable*
+  ◆  🧠  Plugin     : *${(pluginList || []).length}*
+  ◆  🛡️  Status     : *Online*
 
   ${config.botName} adalah bot WhatsApp multipurpose yang dirancang untuk membantu komunitas dengan fitur game, ekonomi, grup, tools, dan premium system.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ✨ *Rapi, stabil, dan siap dipakai*
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
     await sock.sendMessage(from, { text });

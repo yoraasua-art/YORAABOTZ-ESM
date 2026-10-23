@@ -513,7 +513,7 @@ test('afk: set, di-tag diberi tahu (dengan jeda), kembali diumumkan', async () =
     now: 1_000_000 + 5 * 60000,
   });
   assert.equal(sent.length, 1);
-  assert.match(sent[0].text, /sedang AFK sejak 5 menit/);
+  assert.match(sent[0].text, /sedang AFK selama 5 menit/);
   assert.match(sent[0].text, /Makan siang/);
 
   // di-reply lagi dalam 1 menit -> tidak di-spam
@@ -532,7 +532,7 @@ test('afk: set, di-tag diberi tahu (dengan jeda), kembali diumumkan', async () =
   // A mengirim pesan biasa -> kembali
   await afk.processAfkMessage({ ...base, sender: A, text: 'udah balik', msg: { message: { conversation: 'udah balik' } }, now: 1_000_000 + 65 * 60000 });
   assert.equal(sent.length, 2);
-  assert.match(sent[1].text, /sudah kembali dari AFK/);
+  assert.match(sent[1].text, /kembali setelah AFK/);
   assert.match(sent[1].text, /1 jam/);
   assert.equal(db[A].afk, null);
 });

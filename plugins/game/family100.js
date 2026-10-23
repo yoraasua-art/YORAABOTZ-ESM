@@ -47,7 +47,7 @@ module.exports = {
       });
     });
     await sock.sendMessage(from, {
-      text: `👨‍👩‍👧‍👦 *FAMILY 100*\n\n${d.q}\n\nAda *${d.jawab.length} jawaban* yang benar!\n\n💬 *Rebutan! Ketik satu jawaban per pesan, siapa cepat dia dapat!*\n🏳️ Pemilik soal ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | tiap jawaban +1 Point, +Rp 250 · bonus penutup +2 Point, +Rp 500`,
+      text: `👨‍👩‍👧‍👦 *FAMILY 100*\n\n${d.q}\n\nAda *${d.jawab.length} jawaban* yang benar!\n\n💬 *Jawab satu per pesan; yang tercepat mendapatkannya!*\n🏳️ Pemilik soal: ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | tiap jawaban +1 poin, +Rp 250 · bonus lengkap +2 poin, +Rp 500`,
     });
   },
 };

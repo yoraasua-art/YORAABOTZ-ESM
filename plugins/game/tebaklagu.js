@@ -44,7 +44,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${jwb}*` });
     });
     await sock.sendMessage(from, {
-      text: `🎵 *TEBAK LAGU*\n\n🎤 Potongan lirik:\n_"${d.lirik}"_\n\n💬 *Ketik judul lagunya langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 Point, +Rp 900`,
+      text: `🎵 *TEBAK LAGU*\n\n🎤 Potongan lirik:\n_"${d.lirik}"_\n\n💬 *Ketik judul lagunya di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +4 poin, +Rp 900`,
     });
   },
 };

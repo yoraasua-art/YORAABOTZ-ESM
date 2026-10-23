@@ -1,5 +1,4 @@
 const { renderMenu } = require('../../lib/menu-layout');
-const { VERSION } = require('../../lib/version');
 
 const categoryDetails = {
   menu: { icon: '📚', title: 'MENU & NAVIGASI' },
@@ -62,7 +61,6 @@ module.exports = {
       prefix,
       sections,
       footer: [`Total fitur: *${totalCommands}*`],
-      versionPlacement: 'header',
     });
 
     await sock.sendMessage(from, { text: menuText }, { quoted: msg });

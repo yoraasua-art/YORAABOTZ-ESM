@@ -16,7 +16,7 @@ module.exports = {
       }, { quoted: msg });
     }
 
-    await sock.sendMessage(from, { text: '⏳ Downloading...' }, { quoted: msg });
+    await sock.sendMessage(from, { text: '⏳ Mengunduh media Instagram...' }, { quoted: msg });
 
     try {
       const data = await downloadIG(url, { ...parsed.opts, maxBytes: parsed.maxBytes });
@@ -44,7 +44,7 @@ module.exports = {
     } catch (e) {
       console.error('❌ IG error:', e.message);
       await sock.sendMessage(from, {
-        text: `❌ *Gagal download*\n\n${e.message}`,
+        text: `❌ *Gagal mengunduh*\n\n${e.message}`,
       }, { quoted: msg });
     }
   },

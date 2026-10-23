@@ -9,16 +9,16 @@ module.exports = {
     try { isOwner = isSenderOwner && isSenderOwner(); } catch {}
     if (!isOwner) return;
 
-    await sock.sendMessage(from, { text: '🔄 Reloading plugins...' });
+    await sock.sendMessage(from, { text: '🔄 Memuat ulang plugin...' });
 
     try {
       if (typeof reloadPlugins !== 'function') throw new Error('Plugin loader tidak tersedia.');
       const result = reloadPlugins();
       await sock.sendMessage(from, {
-        text: `${result.applied ? '✅ *RELOAD SELESAI*' : '⚠️ *RELOAD DIBATALKAN*'}\n\n📦 Plugin aktif: ${result.loaded}\n❌ Gagal dimuat: ${result.failed}\n\n${result.applied ? 'Perubahan command sudah diterapkan.' : 'Daftar plugin sebelumnya tetap aktif; periksa error di console sebelum mencoba lagi.'}`,
+        text: `${result.applied ? '✅ *PLUGIN DIMUAT ULANG*' : '⚠️ *PEMUATAN ULANG DIBATALKAN*'}\n\n📦 Plugin aktif: ${result.loaded}\n❌ Gagal dimuat: ${result.failed}\n\n${result.applied ? 'Perubahan perintah sudah diterapkan.' : 'Plugin sebelumnya tetap aktif. Periksa error di console sebelum mencoba lagi.'}`,
       });
     } catch (e) {
-      await sock.sendMessage(from, { text: `❌ Error: ${e.message}` });
+      await sock.sendMessage(from, { text: `❌ Gagal: ${e.message}` });
     }
   },
 };

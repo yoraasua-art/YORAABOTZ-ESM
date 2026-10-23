@@ -25,7 +25,7 @@ module.exports = {
     const c = pm.getConfig();
     const health = Object.fromEntries(Object.keys(c.providers).map(name => [name, pm.getHealth(name)]));
     const lines = [
-      '📡 *HEALTH STATUS PROVIDER DOWNLOADER*',
+      '📡 *STATUS PROVIDER PENGUNDUH*',
       '',
       `⏱️ Timeout : ${c.global.timeoutMs} ms`,
       `🔁 Retry   : ${c.global.retries}x`,

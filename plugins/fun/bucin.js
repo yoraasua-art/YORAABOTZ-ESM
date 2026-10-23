@@ -32,6 +32,6 @@ module.exports = {
   aliases: ['baper', 'romantis'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `💞 *KATA BUCIN* (${BUCIN.length})\n\n${random(BUCIN)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `💞 *KATA BUCIN*\n\n${random(BUCIN)}` }, { quoted: msg });
   },
 };

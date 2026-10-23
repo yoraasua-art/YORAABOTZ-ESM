@@ -32,6 +32,6 @@ module.exports = {
   aliases: ['pickup', 'rayuan'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `💌 *PICK UP LINE* (${LINES.length})\n\n${random(LINES)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `💌 *PICK UP LINE*\n\n${random(LINES)}` }, { quoted: msg });
   },
 };

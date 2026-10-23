@@ -8,7 +8,7 @@ module.exports = {
     const { from, config } = ctx;
     const quoted = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
     const text = args.join(' ').trim() || quoted?.conversation || quoted?.extendedTextMessage?.text || '';
-    if (!text) return sock.sendMessage(from, { text: `Format: *${config.prefix}ttp <teks>*` }, { quoted: msg });
+    if (!text) return sock.sendMessage(from, { text: `❌ Format: *${config.prefix}ttp <teks>*` }, { quoted: msg });
     try {
       const image = await maker.ttpImage(text);
       const sticker = await maker.toSticker(image, maker.packOf(config));

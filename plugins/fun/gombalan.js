@@ -32,6 +32,6 @@ module.exports = {
   aliases: ['gombal', 'gombalreceh'],
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
-    await sock.sendMessage(from, { text: `💘 *GOMBALAN* (${GOMBALAN.length})\n\n${random(GOMBALAN)}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `💘 *GOMBALAN*\n\n${random(GOMBALAN)}` }, { quoted: msg });
   },
 };

@@ -45,6 +45,6 @@ module.exports = {
   async execute(sock, msg, args, ctx) {
     const { from, random } = ctx;
     const q = random(QUOTES);
-    await sock.sendMessage(from, { text: `💬 *QUOTE* (${QUOTES.length})\n\n_"${q.text}"_\n\n— ${q.author}` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `💬 *QUOTE*\n\n_"${q.text}"_\n\n— ${q.author}` }, { quoted: msg });
   }
 };

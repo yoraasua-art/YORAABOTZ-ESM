@@ -33,7 +33,7 @@ module.exports = {
       await sock.sendMessage(from, { text: `⏰ *WAKTU HABIS!*\n\nJawaban: *${d.planet}*` });
     });
     await sock.sendMessage(from, {
-      text: `🪐 *TEBAK PLANET*\n\n${d.clue}\n\nPlanet apakah ini?\n\n💬 *Ketik jawabanmu langsung di chat!*\n🏳️ Ketik *nyerah* untuk skip\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +3 Point, +Rp 700`,
+      text: `🪐 *TEBAK PLANET*\n\n${d.clue}\n\nPlanet apakah ini?\n\n💬 *Ketik jawabanmu di chat!*\n🏳️ Ketik *nyerah* untuk menyerah\n\n⏱️ ${ctx.gameDurationText || '2 menit'} | +3 poin, +Rp 700`,
     });
   },
 };

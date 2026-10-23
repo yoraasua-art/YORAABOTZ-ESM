@@ -41,7 +41,7 @@ module.exports = {
     });
 
     await sock.sendMessage(from, {
-      text: `╔══════════════════════════════════╗\n║      ✅  *REGISTRASI BERHASIL*    ║\n╚══════════════════════════════════╝\n\n👤 Nama  : *${nama}*\n📞 Nomor : *${senderNumber}*\n\n╭──────────────────────────────────╮\n│  🎁  *BONUS PENDAFTARAN*          │\n╰──────────────────────────────────╯\n\n  ◆  🎫  +${bonusLimit} Limit\n  ◆  💰  +${formatMoney(bonusMoney)}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✅ Sekarang kamu bisa akses *semua fitur* bot!\n\n💡 Coba: *${config.prefix}menu* | *${config.prefix}daily* | *${config.prefix}profile*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  ⚡  _${config.botName}_`,
+      text: `✅ *Pendaftaran berhasil!*\n\n👤 Nama: *${nama}*\n📞 Nomor: *${senderNumber}*\n\n🎁 Bonus pendaftaran:\n• +${bonusLimit} limit\n• +${formatMoney(bonusMoney)}\n\nCoba *${config.prefix}menu*, *${config.prefix}daily*, atau *${config.prefix}profile*.`,
     }, { quoted: msg });
   },
 };
