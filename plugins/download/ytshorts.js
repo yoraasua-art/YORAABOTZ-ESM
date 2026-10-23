@@ -1,0 +1,3 @@
+const { downloadYT, toMedia } = require('../../lib/downloader');
+const { parseDownloadOptions } = require('../../lib/download-options');
+module.exports={name:'ytshorts',category:'download',aliases:['shortsdl','ytshort'],description:'Download YouTube Shorts sebagai video.',async execute(sock,msg,args,ctx){const {from}=ctx; const p=parseDownloadOptions(args); const u=p.url;if(!u||!/youtube\.com\/shorts\//i.test(u))return sock.sendMessage(from,{text:'❌ Gunakan link YouTube Shorts.'},{quoted:msg});try{const d=await downloadYT(u,'mp4',{...p.opts,maxBytes:p.maxBytes});return sock.sendMessage(from,{video:toMedia(d),mimetype:'video/mp4',caption:`📱 *YOUTUBE SHORTS*\n${d.title||''}`},{quoted:msg})}catch(e){return sock.sendMessage(from,{text:`❌ ${e.message}`},{quoted:msg})}}};

@@ -1,0 +1,44 @@
+{
+  "name": "yora-botz",
+  "version": "8.0.2",
+  "description": "Yora Botz · ESM entry point with CommonJS core compatibility · v8.0.2",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "test": "node --test",
+    "preflight": "node scripts/preflight.js",
+    "reset-session": "node scripts/reset-session.js",
+    "audit:local": "node scripts/audit.js",
+    "test:esm": "node --test test/esm-compat.test.mjs",
+    "postinstall": "node scripts/patch-sticker-formatter.js"
+  },
+  "author": "Cahyo Store",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@distube/ytdl-core": "^4.16.12",
+    "ffmpeg-static": "^5.3.0",
+    "@hapi/boom": "^10.0.1",
+    "@huggingface/transformers": "^4.3.1",
+    "@whiskeysockets/baileys": "6.7.24",
+    "form-data": "^4.0.6",
+    "pino": "^10.4.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.5",
+    "wa-sticker-formatter": "^4.4.4"
+  },
+  "overrides": {
+    "wa-sticker-formatter": {
+      "axios": "^1.20.0",
+      "file-type": "^21.3.4",
+      "image-size": "^2.0.4",
+      "sharp": "^0.35.5"
+    }
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "module": "index.mjs",
+  "allowScripts": {
+    "ffmpeg-static@5.3.0": true
+  }
+}

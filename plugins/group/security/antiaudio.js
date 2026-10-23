@@ -1,0 +1,2 @@
+const { requireGroupAdmin } = require('../../../lib/group-utils');
+module.exports={name:'antiaudio',category:'group',aliases:['noaudio'],async execute(sock,msg,args,ctx){if(!await requireGroupAdmin(sock,msg,ctx,{needBotAdmin:true}))return;const a=(args[0]||'').toLowerCase();if(['on','off'].includes(a)){ctx.updateGroupSettings(ctx.from,{antiaudio:a==='on'});return sock.sendMessage(ctx.from,{text:`✅ Anti-Audio ${a==='on'?'AKTIF':'NONAKTIF'}.`},{quoted:msg});}return sock.sendMessage(ctx.from,{text:`Format: ${ctx.config.prefix}antiaudio on/off`},{quoted:msg});}};

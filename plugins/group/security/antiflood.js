@@ -1,0 +1,2 @@
+const { requireGroupAdmin } = require('../../../lib/group-utils');
+module.exports={name:'antiflood',category:'group',aliases:['floodguard'],async execute(sock,msg,args,ctx){if(!await requireGroupAdmin(sock,msg,ctx,{needBotAdmin:true}))return;const a=(args[0]||'').toLowerCase();if(['on','off'].includes(a)){ctx.updateGroupSettings(ctx.from,{antiflood:a==='on'});return sock.sendMessage(ctx.from,{text:`✅ Anti-Flood ${a==='on'?'AKTIF':'NONAKTIF'}.`},{quoted:msg});}return sock.sendMessage(ctx.from,{text:`Format: ${ctx.config.prefix}antiflood on/off`},{quoted:msg});}};

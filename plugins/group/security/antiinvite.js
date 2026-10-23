@@ -1,0 +1,2 @@
+const { requireGroupAdmin } = require('../../../lib/group-utils');
+module.exports={name:'antiinvite',category:'group',aliases:['antigc','antiwame'],async execute(sock,msg,args,ctx){if(!await requireGroupAdmin(sock,msg,ctx,{needBotAdmin:true}))return;const a=(args[0]||'').toLowerCase();if(['on','off'].includes(a)){ctx.updateGroupSettings(ctx.from,{antiinvite:a==='on'});return sock.sendMessage(ctx.from,{text:`✅ Anti-Invite ${a==='on'?'AKTIF':'NONAKTIF'}.`},{quoted:msg});}return sock.sendMessage(ctx.from,{text:`Format: ${ctx.config.prefix}antiinvite on/off`},{quoted:msg});}};

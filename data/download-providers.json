@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "global": {
+    "timeoutMs": 45000,
+    "retries": 2,
+    "downloadConcurrency": 2,
+    "circuitCooldownMs": 60000
+  },
+  "providers": {
+    "ytdl-core": {
+      "enabled": true,
+      "type": "local",
+      "label": "Distube ytdl-core"
+    },
+    "yt-dlp": {
+      "enabled": true,
+      "type": "local",
+      "label": "yt-dlp"
+    },
+    "cobalt": {
+      "enabled": true,
+      "type": "website",
+      "label": "Cobalt",
+      "endpoint": "https://api.cobalt.tools"
+    },
+    "tikwm": {
+      "enabled": true,
+      "type": "website",
+      "label": "TikWM",
+      "endpoint": "https://www.tikwm.com"
+    },
+    "instagram-embed": {
+      "enabled": true,
+      "type": "website",
+      "label": "Instagram Embed",
+      "endpoint": "https://www.instagram.com"
+    }
+  },
+  "chains": {
+    "youtube": [
+      "ytdl-core",
+      "yt-dlp",
+      "cobalt"
+    ],
+    "tiktok": [
+      "tikwm",
+      "yt-dlp",
+      "cobalt"
+    ],
+    "instagram": [
+      "instagram-embed",
+      "yt-dlp",
+      "cobalt"
+    ]
+  }
+}

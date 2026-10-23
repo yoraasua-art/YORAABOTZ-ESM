@@ -1,0 +1,2 @@
+const { requireGroupAdmin } = require('../../../lib/group-utils');
+module.exports={name:'antisticker',category:'group',aliases:['nosticker'],async execute(sock,msg,args,ctx){if(!await requireGroupAdmin(sock,msg,ctx,{needBotAdmin:true}))return;const a=(args[0]||'').toLowerCase();if(['on','off'].includes(a)){ctx.updateGroupSettings(ctx.from,{antisticker:a==='on'});return sock.sendMessage(ctx.from,{text:`✅ Anti-Sticker ${a==='on'?'AKTIF':'NONAKTIF'}.`},{quoted:msg});}return sock.sendMessage(ctx.from,{text:`Format: ${ctx.config.prefix}antisticker on/off`},{quoted:msg});}};

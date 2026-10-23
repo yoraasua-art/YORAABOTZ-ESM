@@ -1,0 +1,2 @@
+const { requireGroupAdmin } = require('../../../lib/group-utils');
+module.exports={name:'antimedia',category:'group',aliases:['nomedia'],async execute(sock,msg,args,ctx){if(!await requireGroupAdmin(sock,msg,ctx,{needBotAdmin:true}))return;const a=(args[0]||'').toLowerCase();if(['on','off'].includes(a)){ctx.updateGroupSettings(ctx.from,{antimedia:a==='on'});return sock.sendMessage(ctx.from,{text:`✅ Anti-Media ${a==='on'?'AKTIF':'NONAKTIF'} (foto/video).`},{quoted:msg});}return sock.sendMessage(ctx.from,{text:`Format: ${ctx.config.prefix}antimedia on/off`},{quoted:msg});}};
